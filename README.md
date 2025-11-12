@@ -59,6 +59,11 @@ qualification and will be automatically registered to both races.
     * If a team has more than one car on the track at a time, the team will be flagged. 
     * If a team is flagged three times, the team will be disqualified from the competition.
 
+    * Before the first official timed session, each team must submit a Final Bill of Materials (BoM) for the exact car that will race. The BoM must list every major hardware component (chassis, compute, sensors, drivetrain, tires, batteries, custom parts) and its declared cost.
+    * The total declared hardware cost of the race car must not exceed the competition Cost Cap `COST_CAP_USD` (announced by the organizers before the event). Declared cost is defined as publicly available off-the-shelf replacement cost at retail. Sponsor discounts, in-house machining time, and student labor do not reduce the declared cost, and all hardware installed during the event counts toward the Cost Cap.
+    * The car that runs on track must match the submitted BoM. The organizers may perform teardown after racing. Failure to submit a BoM, mismatch between the BoM and the physical car, declared cost above the Cost Cap, or misrepresentation of component cost results in disqualification.
+    * By entering the competition, teams agree that the organizers will publish all submitted BoMs after the event. The published data will include per-part cost, total cost, vehicle mass with race battery, measured peak motor/battery current limit, and tire compound / hardness measured at inspection. Teams also agree that any other team may freely reproduce any published hardware design or part choice in future events. Software (code, tuning, algorithms) is not published.
+
 3. Should a single lab wish to participate with multiple teams, the lab must provide a unique vehicle for each team. There are no limiations on the number of teams a lab can field as long as the following rules are followed:
     * As this is an open-source community where collaboration is encouraged, the teams are allowed to help and collaborate **before** the competition. However, during the competition, the teams must compete as independent teams.
     * Each team must run their own unique algorithms and cannot run the same code on multiple vehicles.
@@ -85,22 +90,27 @@ qualification and will be automatically registered to both races.
 
 Only cars that meet the following constraints will be allowed to participate:
 
-  1. The vehicle is constructed according to the official [bill of materials](https://f1tenth.readthedocs.io/en/foxy_test/getting_started/build_car/bom.html#bill-of-materials). The teams are allowed to use components of similar or lower specifications.
-  2. Each vehicle will be inspected as a part of qualification whether it meets the criteria. In case the criteria are not met, the vehicle is disqualified.
+  1. The vehicle hardware must comply with the competition Cost Cap described in Section 2 and must be fully documented in the team's submitted Final BoM. Teams may source or fabricate any components, provided (i) the car passes safety inspection, (ii) it fits within the dimensional limits below, and (iii) all components and their declared retail replacement cost appear in the BoM. Historical reference BOMs (e.g., F1TENTH) are examples only and are not mandatory.
+  2. Each vehicle will be inspected as part of qualification for safety, dimensional limits, and BoM / Cost Cap compliance. If the criteria are not met, the vehicle is disqualified.
   3. _Chassis_:
       The race is designed with **1:10 Traxxas** chassis in mind (e.g., [TRA74054](https://traxxas.com/products/models/electric/ford-fiesta-st-rally), [TRA6804R](https://traxxas.com/products/models/electric/6804Rslash4x4platinum), [TRA68086](https://traxxas.com/products/models/electric/slash-4x4-tsm)). These chassis are recommended, but generally, any chassis within 15% of the traxxass cars' dimensions is allowed ( 238mm ≤ Width ≤ 341mm, 454 mm ≤ Length ≤ 654mm). Both 4WD and 2WD are permitted.
   4. _Main Computation Unit_:
       Due to supply chain issues, we're removing constraints on the main computation unit. Any suitable computing unit that physically fits on the vehicle within the size limit is allowed. Examples inlcude Nvidia Jetson Xavier NX, Nvidia Jetson Orin Nano, Nvidia Jetson TX2, Nvidia Jetson Nano, Intel NUC, Raspberry Pi, etc. In the spirit of the competition, all computation must be done onboard the vehicle.
   5. _LiDAR_:
-      [**Hokuyo UST-30LX**](https://www.hokuyo-aut.jp/search/single.php?serial=233), its equivalent, or anything of lower specifications is allowed. The main observed characteristics are: detection range (30 m), scanning frequency (40 Hz), and angular resolution (0.125°).
+      Any LiDAR sensor (2D or 3D) may be used provided it is mounted safely, fits within the vehicle packaging, and the declared cost of the sensor keeps the vehicle within the Cost Cap. The exact model and declared retail cost must appear in the Final BoM.
   6. _Camera_:
       Both *monocamera* (e.g. Logitech C270, Logitech C920, Raspberry Pi Camera Module V2, Arducam) and *stereocameras* (e.g. Intel Realsense, ZED) are allowed.
   7. _Engine_:
-      Only brushless DC motors are allowed. The [**Velineon 3500 kV**](https://traxxas.com/sites/default/files/3351-INST-KC1682%20Velineon%203500_ML_120813.pdf), its equivalent, or anything of lower specifications regarding power and torque are allowed. The car must have **only one** DC motor driving the wheels. The motor could either be sensored or sensorless as long as it meets the specifications
+      The car must have exactly one electric motor that drives the wheels. Any brushless DC motor and any ESC are allowed, sensored or sensorless, and any gear ratio is allowed, provided the system passes safety inspection. Multiple drive motors are not allowed. During inspection the organizers will record the vehicle mass with race battery and the peak motor/battery current limit for publication after the event (see Section 2).
   8.  _Other sensors_:
       Other sensors (IMUs, encoders, custom electronic speed controllers) are not restricted. Indoor GPS sensors (e.g. Marvelmind) are not allowed.
   9. _Tires_:
-      There are no resutrictions on the tires used by the car. Any and all tires that fit the wheels of the chassis are permitted.
+      There are no resutrictions on the tires used by the car. Any and all tires that fit the wheels of the chassis are permitted. Use of tire additives (e.g., traction compounds) is strictly prohibited. Should any team be found to use tire additives, the team will:
+        1. Have to replace the tires with new tires. The team is responsible for sourcing the new tires in time for the competition.
+        2. Be disqualified from the competition if new tires are not provided in time for the competition.
+        3. If time-trials have already been completed, the team's standing will be adjusted to last place.
+        4. If the team has already achieved a podium finish, the podium standing will be revoked and the next best team will be promoted to the podium.
+        5. Other teams are allowed to report a team that is using tire additives to the organizers.
   10. _Battery_:
       The drive motor should be driven *at most* by one (or any equivalent combination) battery rated at most **4s**. There are no limitations on the capacity of the battery. More than one battery can be used on the car as long as only one 4s battery powers the motor. Teams are encouraged to have spare batteries to allow fast replacements in case the battery gets discharged at an inconvenient time.
   11. _Transmitter Spot_:
@@ -148,13 +158,17 @@ The competition will take place inside [Georgia World Congress Center](https://w
 
 ## 2.3 Inspection
 
-1. The purpose of the Inspection is to check that the hardware of the autonomous cars meets the competition requirements and the cars are not dangerous for the environment, opponents, and people.
+1. The purpose of the Inspection is to check that (i) the hardware of the autonomous cars meets the competition requirements and is safe for the environment, opponents, and people, and (ii) the car matches the submitted Final BoM and complies with the Cost Cap.
 
 2. The inspection of the vehicles is done on the first day in the morning.
 
 3. The inspection is done by the race referees.
 
-4. The inspection has to be completed before the Time Trials and after any significant changes to the cars hardware or algorithms during any of the days of the event.
+4. The inspection has to be completed before the Time Trials and after any significant changes to the car's hardware or algorithms during any of the days of the event.
+
+5. At inspection, each team must submit the Final BoM described in Section 2. The BoM must match the physical car that will race. If the BoM is missing, incomplete, or does not match the physical car, the team is disqualified and cannot proceed to Time Trials.
+
+6. At inspection, teams must report (a) total vehicle mass with the race battery installed, (b) peak motor/battery current limit as configured on the ESC, and (c) tire compound / hardness. These values will be published together with the BoM after the event. By entering the competition, each team agrees to this disclosure.
 
 ## 2.4 Time Trial
 
