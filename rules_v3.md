@@ -132,14 +132,6 @@ With every competition instance, general rules are accompanied by competition ru
 - Competition rules may alter general rules or introduce additional rules.
     - In parts where both documents contradict, competition rules take preference.
 
-- Competition rules must contain at least:
-    - Specify timeline
-    - Place
-    - Track/area parameters
-    - Which parts of general rules are applied (if multiple options are available)
-    - Contact on organizers
-    - Prizes
-
 - Organizers reserve the right to change the rules applied in the competition.
     - Subsequent changes have to be announced to all registered teams.
 
@@ -187,8 +179,6 @@ With every competition instance, general rules are accompanied by competition ru
 
 Each vehicle will be inspected during the competition whether it meets the specified criteria. In case the criteria are not met, the vehicle is not allowed to be used in the competition.
 
-Following rules mostly specify the upper bounds on the components; generally everything that is of a lower spec is allowed.
-
 1. Size
     - Width: 296mm ± 10%
     - Length: 568mm ± 10%
@@ -227,7 +217,7 @@ Following rules mostly specify the upper bounds on the components; generally eve
 5. Remote controller
     - No limits.
     - It must have a kill-switch ability so the driver is able to stop the car immediately and remotely.
-6. CPU
+6. Compute
     - No limits, but all computation during the race has to be done onboard the vehicle.
     - Recommended: NVIDIA Jetson Xavier, NVIDIA Jetson Orin, Intel NUC, etc.
 7. LiDAR
@@ -292,6 +282,7 @@ The competition rules must specify:
     - Teams are encouraged to pay attention when moving around the track, especially more when, e.g., running or jumping.
     - Teams are not allowed to obstructing other teams by any means (e.g., if specified, leaving a stationary car on the track outside of the designated area).
     - Teams are not allowed to endanger other teams and cars by an inappropriate behaviour.
+- The teams should not intentionally run code that they expect will crash into the track boundaries. Overly aggressive testing may mess with the track layout.
 - While testing the car, the team should limit the amount of damage to the track to an absolute minimum.
 - Whenever using the track, there has to be at least one team member that keeps an eye on the car and is prepared to activate the kill-switch.
 - Teams that are not taking part in the session should avoid the track at all times.
@@ -352,7 +343,7 @@ _Note: Currently a placeholder._
 
 The track contains intersections, i.e., a track section where multiple driving directions are allowed.
 
-- In the intersection area, following rules apply...
+- In the intersection area, following rules may apply:
 
     - Speed limit
     - Right of way
@@ -418,30 +409,8 @@ The competition is composed of:
 - Head-to-Head Race
 - Awards ceremony
 
-```
-Felix:
-Who is responsible for what and who can decide what? (organizer roles)
-
-Types of Referess:
-- Race Director(s) (determined by foundation, probably Ahmad)
-- Race Organizer(s) (local-ish organizers, resposible for the whole race)
-- Track marshall(s) (local-ish volunteers, responsible for one track)
-- Track referee(s) (local-ish volunteer, subordinate of track marshall)
-
-What things can be determined by who and where is the next highest instance required. What about conflict of interest?
-
-Any higher role can also perform the tasks of a subordinate rule.
-
-
-J: I think this is not something that has to be in rules... more like in the rules for organizers. But yes, it should be clear who is "the contact person".
-
-Felix: I would day that for transparency it should be included herer as well. Then teams know who to bother with what and who might have a conflict-of-interest.
-```
-
 
 ## Registration
-
-_Note: Competition rules should specify: registration method, requirements, deadlines._
 
 - Team interested in participating in the competition has to register using a official registration method. This method may have its deadline.
 - Registrations received after the deadline may not be accepted.
@@ -544,7 +513,7 @@ Practice session where the track is reserved for one team only.
 
 #### Mapping Practice
 
-Practice session used for mapping the track.
+Practice session used for mapping the track. May be organized as any other practice variant with additional rules:
 
 - Teams are not allowed to test their racing algorithms during this practice.
 - A speed limit may be employed for this practice, especially when it is Shared.
@@ -573,6 +542,8 @@ Qualification is a session testing the autonomous capabilities of the racing car
     - Other cars
 
 - Qualification is done with a single racing car on the track.
+    - Other cars may be used as static/dynamic obstacles.
+
 - Only inspected car can be used in the Qualification.
     - In case the team intends to use multiple cars during the competition, they have to qualify with all of them.
 
@@ -599,6 +570,11 @@ Main part of the competition is composed of race sessions in which the teams are
     - **Automatic**: Starting signal is transmitted directly into the car.
         - _Felix: You can copy that part from the corresponding section in the T2V module blog post (and read it again...)_
     - **Mixed**: Each competing team may select its starting method.
+
+- The race start has one guaranteed signal: "Go". Competition rules may add other signals.
+    - _Note: Use this as a "template" for automatic start up. Then merge it._
+    - Usage of other signals (such as "Ready" and "Set") much be specified in the competition rules.
+    - Countdowns between the signals may differ for every start.
 
 - The race is stopped (paused) by, e.g.:
     - Raising a red flag.
@@ -646,6 +622,9 @@ Violations are major rule infringements that may result into warnings. Severe of
 - The algorithms must not intentionally hinder the opponent or perform any damage to it. Specifically, maneuvers such as deliberate crowding of a car beyond the edge of the track or any other abnormal change of direction are strictly prohibited.
     - Violating this rule may lead to disqualification regardless the amount of warnings issued.
 
+- Teams are allowed to report other teams' violations.
+    - If the reported team is found guilty, it receives a warning; otherwise it goes to the reporting team.
+
 - Upon receiving 3 warnings, the team is disqualified from the competition.
     - During a race this automatically means the opponent wins.
 
@@ -685,9 +664,7 @@ Time Trial is a race with a goal to drive through the designated track as fast a
 
 - Points are awarded in each category separately according to the ranking of the teams.
 
-    - A (1) Point is given for completing at least one heat.
     - A (1) Point is given for every team that has worse scoring.
-    - _Note: Effectively, it is the same as before, with 10 teams, the first gets 10 points._
 
 - The final score for the Time Trial is the sum of the points from all categories.
 
