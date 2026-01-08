@@ -152,7 +152,8 @@ These rules are organized as follows:
     - Inspected team: Participating team that have at least one inspected car.
     - Qualified team: Inspected team that successfully finished the Qualification.
 - Team Member: A member of the team. Each person MUST belong to only one team during the competition.
-    - <a id="driver"></a>Driver: A team member that is holding the remote controller in order to hit the kill-switch when necessary.
+    - Captain: A team member that represents the team and is used as a contact person by the competition organizers. Teams choose their captain during the on-site registration for the duration of the competition.
+    - <a id="operator"></a>Operator: A team member that is holding the remote controller in order to hit the kill-switch when necessary.
 - Car: Vehicle used in the competition, assembled according to the Vehicle specification. Each team MUST have their own car.
     - Inspected car: Car that successfully passed through the Inspection.
     - Hardware list: List of components that the car is composed of along with their costs. All parts of the Vehicle specification MUST be addressed along with additional sensors.
@@ -176,7 +177,7 @@ These rules are organized as follows:
 - <a id="flags"></a>Flags: Visual signal to the teams. May be accompanied with whistles. When flags are used during the competition, their meaning is as follows:
     - Checkered flag: A flag is raised if the team is on the last lap. The flag is dropped and then waved when the team finishes and wins the current heat.
     - <a id="red-flag"></a>Red flag: A flag is raised if a race-stopping car crash occurs. The flag is dropped after all cars are stopped, and the team representatives are allowed to approach the track.
-    - Green flag: A flag is raised to signal that the race is safe to continue. The flag is dropped, and the race resumes.
+    - <a id="green-flag"></a>Green flag: A flag is raised to signal that the race is safe to continue for the stopped cars. The flag is dropped, and the race resumes.
     - Blue flag: A flag is raised during open testing to indicate that a team needs to let another team pass.
     - Yellow flag: A flag is raised to indicate that the teams have to drive slowly. Yellow flags MAY be also placed on the track to define a slow-speed section. <!-- This used to be "warning for a rule violation". -->
     - <a id="black-flag"></a>Black flag: A flag is raised if the team is disqualified. The flag is dropped after the disqualified team stops the car and leaves the track. The opponent is allowed to continue the race.
@@ -220,7 +221,7 @@ Each vehicle will be inspected during the competition whether it meets the speci
     - Recommended: VESC
 5. Remote controller
     - No limits.
-    - It must have a kill-switch ability so the [Driver](#driver) is able to stop the car immediately and remotely.
+    - It must have a kill-switch ability so the [Operator](#operator) is able to stop the car immediately and remotely.
 6. Compute
     - No limits, but all computation during the race MUST be done onboard the vehicle.
     - Recommended: NVIDIA Jetson Xavier, NVIDIA Jetson Orin, Intel NUC, etc.
@@ -252,9 +253,9 @@ Other sensors are not restricted, however they MUST be mentioned in the hardware
     - The box should be made of LiDAR perceivable material (e.g., cardboard).
     - As long as the object results in the desired LiDAR signature, the object can have any additional aerodynamic shapes added like fins, wings, etc.
     - The box may be of any color as long as it is easily perceivable by the LiDARs of the other cars.
-- Tire chemicals (additives) that may leave residuals on the track surface are not allowed.
-    - Cleaning liquids are allowed. _TODO: Need to clarify._
-
+- Tire modifications that may leave residuals on the track surface are not allowed.
+    - Forbidden modifications are, e.g., cleaning using soaps, or sanding the tires.
+    - Volatile chemicals (e.g., alcohol-based cleaning liquids) are allowed.
 
 ## Track
 <a id="track"></a>
@@ -286,13 +287,11 @@ The competition rules MUST specify:
 - The teams are obliged to be respectful with other users of the track.
     - Teams are encouraged to pay attention when moving around the track, especially more when, e.g., running or jumping.
     - Teams are not allowed to obstruct other teams by any means (e.g., if specified, leaving a stationary car on the track outside of the designated area).
-    - Teams are not allowed to endanger other teams and cars by an inappropriate behaviour.
+    - Teams are not allowed to endanger other teams, cars and especially spectators and by-goers by an inappropriate behaviour.
 - The teams should not intentionally run code that they expect will crash into the track boundaries. Overly aggressive testing may mess with the track layout.
 - While testing the car, the team should limit the amount of damage to the track to an absolute minimum.
-- Whenever using the track, there has to be at least one team member that keeps an eye on the car and is prepared to activate the kill-switch.
+- Whenever using the track, there has to be at least one team member ([Operator](#operator)) that keeps an eye on the car and is prepared to activate the kill-switch.
 - Teams that are not taking part in the session should avoid the track at all times.
-- Driving outside of the track is generally not allowed.
-    - Exception is testing the car in very slow speeds.
 
 
 ### Track features
@@ -323,7 +322,7 @@ Track contains sections with defined speed limits.
 
 Track contains sections that are marked as a pit lane.
 
-- When this track feature is used, stopping outside the pit lane is not allowed.
+- When this track feature is used, deliberate stopping outside the pit lane is not allowed.
     - Stopping outside of pit lane is considered as a ... _(which type of violation?)_ <!-- TODO -->
 - Teams are allowed to add cars to the track only at a pit lane area.
     - Teams are highly encouraged to do the car removal here as well, unless required by the current situation.
@@ -435,15 +434,12 @@ The competition is composed of:
 ## Eligibility checklist
 <a id="eligibility-checklist"></a>
 
-_Note: I wanted to add something in between -- you are registered, but can you actually attend the competition?_
-
 The team is eligible to attend the competition as long as:
 
 - Registration fee is paid.
 - Registration is confirmed by the organizers, i.e., the team is approved.
 - All required forms and materials are sent to the organizers by the given deadline.
     - The car does not differ from the submitted hardware list.
-- _Felix: This is part of the on-site registration/inspection, I'm not sure if we actually need this section... We could add it as a "Checklist" in general_
 
 
 ## On-site registration
@@ -589,7 +585,7 @@ Main part of the competition is composed of race sessions in which the teams are
     - Raising a [black flag](#black-flag).
     - Using a [whistle](#whistle).
 
-- During the race, the [Driver](#driver) has to hold the remote in a raised hand to be clear that the car is not manually controlled (so-called _Driver stance_).
+- During the race, the [Operator](#operator) has to hold the remote in a raised hand to be clear that the car is not manually controlled (so-called _Operator/Driver stance_).
 
 - Obstacles and opponents may be overtaken from both the right or the left side.
 
@@ -605,7 +601,7 @@ During a race certain mild accidents may happen. Following steps and penalties a
     1. Stop its car.
     2. Move the car (by hand or using the remote control) to the side of the track next to the latest position before crash.
     3. Repair the track and/or place the obstacles to their appropriate positions.
-    4. Wait for the clearance from the organizers.
+    4. Wait for the clearance from the organizers (using, e.g. [a green flag](#green-flag)).
     5. Start the car and continue the race.
 
     - During all of this, the opponent’s car must not be restricted by the team’s actions and the opponent is allowed to further race without stopping its car.
@@ -793,6 +789,6 @@ If the racing track is changed for the Master Cup, the teams are given an extra 
 
 The competition concludes with the Awards ceremony. The ceremony may be accompanied by a workshop session.
 
-- During the workshop session, top 4 teams from each cup are encouraged to briefly talk about their approach.
-    - In case a team cannot attend the workshop, they may send a short presentation instead.
+- During the workshop session, top 4 teams from each cup are obliged to briefly talk about their approach.
+    - In case a team cannot attend the workshop, they may send a short video presentation instead.
     - The presentations are shared after the competition on the competition website.
