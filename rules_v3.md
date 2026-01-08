@@ -173,7 +173,7 @@ These rules are organized as follows:
 - Violations: Major infringements of the rules.
 - Warning: Issued for violating the rules. Three warnings may lead to disqualification from the competition.
 - Disqualification: Revoking the ability to attend the competition.
-- <a id="whistle"></a>Whistle: Sound signal to raise teams' attention. Used during the race to highlight important event. May be accompanied with flags.
+- <a id="whistle"></a>Whistle: Sound signal (e.g., whistle, buzzer) to raise teams' attention. Used during the race to highlight important event. May be accompanied with flags. <!-- Notifying sound -->
 - <a id="flags"></a>Flags: Visual signal to the teams. May be accompanied with whistles. When flags are used during the competition, their meaning is as follows:
     - Checkered flag: A flag is raised if the team is on the last lap. The flag is dropped and then waved when the team finishes and wins the current heat.
     - <a id="red-flag"></a>Red flag: A flag is raised if a race-stopping car crash occurs. The flag is dropped after all cars are stopped, and the team representatives are allowed to approach the track.
