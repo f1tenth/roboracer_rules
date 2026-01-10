@@ -153,11 +153,12 @@ These rules are organized as follows:
     - Qualified team: Inspected team that successfully finished the Qualification.
 - Team Member: A member of the team. Each person MUST belong to only one team during the competition.
     - Captain: A team member that represents the team and is used as a contact person by the competition organizers. Teams choose their captain during the on-site registration for the duration of the competition.
-    - <a id="operator"></a>Operator: A team member that is holding the remote controller in order to hit the kill-switch when necessary.
+    - <a id="operator"></a>Operator: A team member that is holding the remote controller in order to hit the [kill-switch](#kill-switch) when necessary.
+      - <a id="operator-stance"></a>Operator stance: A stance in which the Operator holds the remote in a raised hand. Changing into this stance also signals that the team is ready for a race.
 - Car: Vehicle used in the competition, assembled according to the Vehicle specification. Each team MUST have their own car.
     - Inspected car: Car that successfully passed through the Inspection.
     - Hardware list: List of components that the car is composed of along with their costs. All parts of the Vehicle specification MUST be addressed along with additional sensors.
-    - Kill-switch: A method to remotely and immediately stop the car.
+    - <a id="kill-switch"></a>Kill-switch: A method to remotely and immediately stop the car.
 - Track: Delimited area used for racing.
     - Track border: A barrier that delimits the driveable area.
     - Track section: Part of the track along its centerline spanning across the whole width.
@@ -177,10 +178,12 @@ These rules are organized as follows:
 - <a id="flags"></a>Flags: Visual signal to the teams. May be accompanied with whistles. When flags are used during the competition, their meaning is as follows:
     - Checkered flag: A flag is raised if the team is on the last lap. The flag is dropped and then waved when the team finishes and wins the current heat.
     - <a id="red-flag"></a>Red flag: A flag is raised if a race-stopping car crash occurs. The flag is dropped after all cars are stopped, and the team representatives are allowed to approach the track.
-    - <a id="green-flag"></a>Green flag: A flag is raised to signal that the race is safe to continue for the stopped cars. The flag is dropped, and the race resumes.
+    - <a id="green-flag"></a>Green flag: A flag is raised to signal that the race is safe to continue for the stopped cars. After the teams confirm their readiness (using [Operator stance](#operator-stance)), the flag is dropped, allowing the stopped cars to resume the race.
     - Blue flag: A flag is raised during open testing to indicate that a team needs to let another team pass.
-    - Yellow flag: A flag is raised to indicate that the teams have to drive slowly. Yellow flags MAY be also placed on the track to define a slow-speed section. <!-- This used to be "warning for a rule violation". -->
+    - Yellow flag: A flag is raised to indicate that the teams have to drive slowly, because of, e.g., hazard on the track. Yellow flags MAY be also placed on the track to define a slow-speed section. <!-- This used to be "warning for a rule violation". -->
+    - Black-and-White flag: A flag is raised if the team is warned for a rule violation.
     - <a id="black-flag"></a>Black flag: A flag is raised if the team is disqualified. The flag is dropped after the disqualified team stops the car and leaves the track. The opponent is allowed to continue the race.
+    - _Note: Flags MAY be pointed at the [Operator](#operator) to signalize that it their effect applies only for that team. This is used, e.g., when only a single set of flags is available._
 
 
 ## Vehicle specifications
@@ -211,8 +214,9 @@ Each vehicle will be inspected during the competition whether it meets the speci
 4. Motor
     - Electric motors only.
     - Only a single motor can be used for operating the drivetrain.
-    - Torque: 0.237N·m (100A @ 3500RPM/V) ± 10% <!-- Used https://things-in-motion.blogspot.com/2018/12/how-to-estimate-torque-of-bldc-pmsm.html -->
-    - Recommended: Velineon 3500
+      - Torque limit: 0.237N·m (100A @ 3500RPM/V) ± 10% <!-- Used https://things-in-motion.blogspot.com/2018/12/how-to-estimate-torque-of-bldc-pmsm.html -->
+      - Recommended: Velineon 3500
+    - Other methods for providing motion to the whole car (such as propellers) are not allowed.
 5. Battery
     - Up to **4S** for powering the motor.
     - Additional batteries for powering other components are not limited.
@@ -221,7 +225,7 @@ Each vehicle will be inspected during the competition whether it meets the speci
     - Recommended: VESC
 5. Remote controller
     - No limits.
-    - It must have a kill-switch ability so the [Operator](#operator) is able to stop the car immediately and remotely.
+    - It must have a [kill-switch](#kill-switch) ability so the [Operator](#operator) is able to stop the car immediately and remotely.
 6. Compute
     - No limits, but all computation during the race MUST be done onboard the vehicle.
     - Recommended: NVIDIA Jetson Xavier, NVIDIA Jetson Orin, Intel NUC, etc.
@@ -253,14 +257,23 @@ Other sensors are not restricted, however they MUST be mentioned in the hardware
     - The box should be made of LiDAR perceivable material (e.g., cardboard).
     - As long as the object results in the desired LiDAR signature, the object can have any additional aerodynamic shapes added like fins, wings, etc.
     - The box may be of any color as long as it is easily perceivable by the LiDARs of the other cars.
-- Tire modifications that may leave residuals on the track surface are not allowed.
-    - Forbidden modifications are, e.g., cleaning using soaps, or sanding the tires.
+- Tire cleaning is permitted as long as the solution used does not leave any residuals on the track after cleanup.
+    - The following methods are prohibited:
+      - Cleaning using soaps. <!-- Add more solutions here if any. -->
+
     - Volatile chemicals (e.g., alcohol-based cleaning liquids) are allowed.
+    - The team is responsible for ensuring that the tires are completely dry and do not leak any solution after squeezing.
+- Tire modifications are generally prohibited. These are, for example:
+    - Sanding the tires.
+    - Using traction compounds or "sauces".
+- All vehicle components MUST be either commercially available or manufactured by the team.
+    - Custom parts MAY be manufactured by a company however the team needs to own all required source files.
+
 
 ## Track
 <a id="track"></a>
 
-Racing track is a delimited area used for racing.
+Racing track is a delimited area used for racing. Organizers are responsible for marking down the track layout and fixing it throughout the competition.
 
 The competition rules MUST specify:
 
@@ -285,12 +298,15 @@ The competition rules MUST specify:
 ### Track behaviour
 
 - The teams are obliged to be respectful with other users of the track.
-    - Teams are encouraged to pay attention when moving around the track, especially more when, e.g., running or jumping.
+    - Teams MUST pay attention when moving around the track, especially more when, e.g., running or jumping.
+      - In case of a human-car interaction, the person inside the track is always at fault.
     - Teams are not allowed to obstruct other teams by any means (e.g., if specified, leaving a stationary car on the track outside of the designated area).
     - Teams are not allowed to endanger other teams, cars and especially spectators and by-goers by an inappropriate behaviour.
-- The teams should not intentionally run code that they expect will crash into the track boundaries. Overly aggressive testing may mess with the track layout.
-- While testing the car, the team should limit the amount of damage to the track to an absolute minimum.
-- Whenever using the track, there has to be at least one team member ([Operator](#operator)) that keeps an eye on the car and is prepared to activate the kill-switch.
+- While using the track:
+    - Teams SHOULD NOT intentionally run code that they expect will crash into the track boundaries. Overly aggressive testing may mess with the track layout.
+    - Teams SHOULD limit the amount of damage to the track to an absolute minimum.
+    - Teams MUST have at least one team member ([Operator](#operator)) that keeps an eye on the car and is prepared to activate the [kill-switch](#kill-switch).
+
 - Teams that are not taking part in the session should avoid the track at all times.
 
 
@@ -585,7 +601,9 @@ Main part of the competition is composed of race sessions in which the teams are
     - Raising a [black flag](#black-flag).
     - Using a [whistle](#whistle).
 
-- During the race, the [Operator](#operator) has to hold the remote in a raised hand to be clear that the car is not manually controlled (so-called _Operator/Driver stance_).
+- During the race, the [Operator](#operator) MUST maintain [Operator stance](#operator-stance) to be clear that the car is not manually controlled.
+    - Changing into this stance is a signal for the competition organizers that the team is ready for a race.
+    - Lowering the remote and raising the other hand is a signal that the emergency stop was triggered.
 
 - Obstacles and opponents may be overtaken from both the right or the left side.
 
@@ -621,9 +639,15 @@ Violations are major rule infringements that MAY result into warnings. Severe of
 - A crash is not considered a warning unless judged by the referees.
     - Crashes that result in a warning include but are not limited to "malicious" crashes where the autonomous car did not attempt to slow down or steer away from the opponent.
     - Under special circumstances, the referees may decide to give a warning to a team with the option of stopping the race to address the issue. The team has a maximum of 5 minutes to fix the issue and resume the race.
-        - This does not apply for double-elimination.
+        - This does not apply for [Double Elimination](#double-elimination).
 
 - The algorithms MUST NOT intentionally hinder the opponent or perform any damage to it. Specifically, maneuvers such as deliberate crowding of a car beyond the edge of the track or any other abnormal change of direction are strictly prohibited.
+    - Violating this rule MAY lead to disqualification regardless the amount of warnings issued.
+
+- During the race, the teams MUST NOT control the car manually.
+    - Triggering the emergency stop must stop the car completely.
+    - Manual control is allowed only after a crash, as specified in Race penalties.
+    - Switching to an autonomous mode MUST be done only after a clearance from the organizers (using, e.g. [a green flag](#green-flag)).
     - Violating this rule MAY lead to disqualification regardless the amount of warnings issued.
 
 - Teams are allowed to report other teams' violations.
@@ -648,6 +672,7 @@ Time Trial is a race with a goal to drive through the designated track as fast a
 - The race consists of multiple heats, two by default. Each heat lasts for a given time (e.g., 5 minutes), and the goal is to drive a single lap in as short time as possible and to drive as many complete laps as possible. Crashing and stopping the car does not pause the heat timer.
 
 - The teams are allowed to change the configuration of their algorithms in between the heats, and even during the heat. When the configuration is being changed during the heat, the car MUST stand still. In other words, the teams cannot update the configuration on-line while the car moves.
+    - In this case, the clearance for continuing the race is automatically given.
 
 - The map (track layout) is known a priori (from a practice before) and the track layout does not change during the race. Keep in mind that cars crash into the walls and the layout of the track might slightly shift over time. Please consider this in your algorithms.
 
@@ -732,6 +757,7 @@ The tournament is organized as a Single Elimination in a series of rounds.
   - Team that loses the race is eliminated from the tournament.
 
 #### Double Elimination
+<a id="double-elimination"></a>
 
 The tournament is organized as a Double Elimination in a series of rounds.
 
