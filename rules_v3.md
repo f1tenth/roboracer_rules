@@ -172,7 +172,7 @@ These rules are organized as follows:
 - Overtake: Act of bypassing opponent car by at least half of its length.
 - Penalties: Minor punishments for not adhering to the rules.
 - Violations: Major infringements of the rules.
-- Warning: Issued for violating the rules. Three warnings may lead to disqualification from the competition.
+- Warning: Issued for violating the rules. Three warnings MAY lead to disqualification from the competition.
 - Disqualification: Revoking the ability to attend the competition.
 - <a id="whistle"></a>Whistle: Sound signal (e.g., whistle, buzzer) to raise teams' attention. Used during the race to highlight important event. May be accompanied with flags. <!-- Notifying sound -->
 - <a id="flags"></a>Flags: Visual signal to the teams. May be accompanied with whistles. When flags are used during the competition, their meaning is as follows:
@@ -254,9 +254,9 @@ Other sensors are not restricted, however they MUST be mentioned in the hardware
 
 - You MUST NOT hinder the opponents from detecting your car, e.g., using materials/colors to adjust the car reflectivity.
 - At all times, the car MUST occupy a square-shaped space of size at least 12×12 cm at every horizontal plane between 10 to 30 cm above the ground. Usually, this is achieved by placing a 12x12x20cm box on top of the car at its back.
-    - The box should be made of LiDAR perceivable material (e.g., cardboard).
+    - The box MUST be made of LiDAR perceivable material (e.g., cardboard).
     - As long as the object results in the desired LiDAR signature, the object can have any additional aerodynamic shapes added like fins, wings, etc.
-    - The box may be of any color as long as it is easily perceivable by the LiDARs of the other cars.
+    - The box MAY have any color as long as it is easily perceivable by the LiDARs of the other cars.
 - Tire cleaning is permitted as long as the solution used does not leave any residuals on the track after cleanup.
     - The following methods are prohibited:
       - Cleaning using soaps. <!-- Add more solutions here if any. -->
@@ -264,7 +264,7 @@ Other sensors are not restricted, however they MUST be mentioned in the hardware
     - Volatile chemicals (e.g., alcohol-based cleaning liquids) are allowed.
     - The team is responsible for ensuring that the tires are completely dry and do not leak any solution after squeezing.
 - Tire modifications are generally prohibited. These are, for example:
-    - Sanding the tires.
+    - Deliberately sanding the tires during the competition.
     - Using traction compounds or "sauces".
 - All vehicle components MUST be either commercially available or manufactured by the team.
     - Custom parts MAY be manufactured by a company however the team needs to own all required source files.
@@ -282,17 +282,18 @@ The competition rules MUST specify:
 - Type of delimiters (e.g., air ducts, cardboard boxes).
 - Height of delimiters.
 - Maximum size (e.g., area) of the track.
+- Minimum track width (minimum distance between the inner and outer border).
 - List of used track features.
 
 
 ### General track notes
 
 - The surface friction MAY naturally slightly differ across the track.
-- When the room is surrounded by windows or semi-transparent surfaces, it might result into incorrect sensor measurements.
+- When the room is surrounded by windows or semi-transparent surfaces, it might result in incorrect sensor measurements.
 - When the track is delimited by a set of pipes (on top of each other) there might be gaps between them.
 - Due to the car tilting, the sensors might see over the track borders or see the floor.
-- When multiple tracks are present, their parameters, features and overall nature may differ.
-    - Current session may differ as well. In that case the organizers MUST clearly state the current session on each track.
+- When multiple tracks are present, their parameters, features and overall nature MAY differ.
+    - The types of sessions MAY differ per track. The organizers MUST clearly indicate the type of session currently active for each track.
 
 
 ### Track behaviour
@@ -349,17 +350,20 @@ Track contains sections that are marked as a pit lane.
 Track borders are not closed, i.e., there are horizontal gaps in them.
 
 - Gaps might be in the inner walls as well as in the outside walls.
-
 - Inside the gaps the track border is delimited by a tape on the ground (or any other marking technique).
+    - If the tape width is not negligible, its inner edge is considered as border.
 
 - Driving inside the gaps is not allowed.
     - Crossing the track border is considered as a [touch](#touch).
     - Crossing the track border by parts of at least 3 wheels is considered as a [crash](#crash).
+- Maximum gap width is lower than the minimum track width in the track section.
+    - _In other words, the open wall gap is always shorter than the track width._
+
 
 
 #### Intersections
 
-_Note: This won't be used for ICRA race._
+_Note: This won't be used for ICRA 2026 race._
 
 <!-- The track contains intersections, i.e., a track section where multiple driving directions are allowed.
 
@@ -431,19 +435,20 @@ The competition is composed of:
 - Time Trial
 - Head-to-Head Race
 - Awards ceremony
+- Workshop / Team presentations
 
 
 ## Registration
 <a id="registration"></a>
 
 - Team interested in participating in the competition has to register using a official registration method. This method may have its deadline.
-- Registrations received after the deadline may not be accepted.
+- Registrations received after the deadline MAY not be accepted.
 - Registration is confirmed by the competition organizers after completing all required steps. These are, but not limited to:
     - Filling up the registration form.
     - Submitting a video of your car driving autonomously.
     - Submitting a hardware list.
         - Hardware list will be made publicly available for other teams after the competition.
-- Not submitting in time may void the registration.
+- Not submitting in time MAY void the registration.
 - Registration not confirmed by the organizers is not deemed valid.
 
 
@@ -464,7 +469,7 @@ The team is eligible to attend the competition as long as:
 Upon their arrival to the competition site, the teams MUST promptly register on-site in order to race.
 
 - The teams MUST register on-site in the given time frame.
-    - Exceptions are allowed as long as they are discussed with the organization team.
+    - Exceptions are allowed as long as they are granted by the organization team.
     - If a team is late for the registration, it MUST inform the organizers (e.g., for flights with a tight deadline, they can send the flight number to the organizers and this is considered enough notice).
 
 - The on-site registration is composed of:
