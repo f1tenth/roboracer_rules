@@ -198,7 +198,7 @@ Each vehicle will be inspected during the competition whether it meets the speci
     - The size limit is induced on the fully equipped car, i.e., as used during the race.
         - The height limit MUST be obeyed at all times, e.g., it MUST NOT be violated because of springs.
 2. Weight
-    - ≤ 5kg <!-- Consider updating this. -->
+    - ≤ 5kg
     - The weight limit is induced on the fully equipped car, i.e., as used during the race.
 3. Chassis
     - No additional limits.
@@ -214,11 +214,12 @@ Each vehicle will be inspected during the competition whether it meets the speci
 4. Motor
     - Electric motors only.
     - Only a single motor can be used for operating the drivetrain.
-      - Torque limit: 0.237N·m (100A @ 3500RPM/V) ± 10% <!-- Used https://things-in-motion.blogspot.com/2018/12/how-to-estimate-torque-of-bldc-pmsm.html -->
+      - Torque: ≤ 0.237N·m (100A @ 3500RPM/V) + 10% <!-- Used https://things-in-motion.blogspot.com/2018/12/how-to-estimate-torque-of-bldc-pmsm.html -->
       - Recommended: Velineon 3500
     - Other methods for providing motion to the whole car (such as propellers) are not allowed.
 5. Battery
-    - Up to **4S** for powering the motor.
+    - Up to **4S LiPo** for powering the motor.
+      - When using a battery with another cell chemistry, its performance MUST NOT exceed this.
     - Additional batteries for powering other components are not limited.
 5. Electronic Speed Controllers
     - No limits.
@@ -268,6 +269,10 @@ Other sensors are not restricted, however they MUST be mentioned in the hardware
     - Using traction compounds or "sauces".
 - All vehicle components MUST be either commercially available or manufactured by the team.
     - Custom parts MAY be manufactured by a company however the team needs to own all required source files.
+- Additional requirements MAY be induced on the vehicles in the competition rules. These are, for example:
+    - Space for a sticker (e.g., competition sponsors, vehicle identification).
+    - Space for an active marker (e.g., external localization for organizers).
+    - Empty USB port (e.g., for powering up additional electronics).
 
 
 ## Track
@@ -559,7 +564,7 @@ The purpose of the Inspection is to check that the hardware of the cars meets th
 - The inspection is done by the race referees.
 - The inspection MUST be completed before the Qualification.
     - Any significant changes to the cars hardware MAY void the inspection.
-    - Teams are advised to inform the organizers prior to these changes.
+    - Teams MUST inform the organizers about the any changes to an inspected car.
 - When a hardware list is submitted as a part of the registration, the car is checked to match these parameters.
     - Organizers MAY also approve using cars that do not match their parameters.
 - Car that is not inspected is not allowed to be used in the competition.
@@ -732,9 +737,10 @@ Head-to-Head race is a race with multiple cars on the track at the same time. Th
 
 - In the first heat, the team that ranked higher in Time Trial chooses the starting position. In case of more heats:
     - In the second heat, the teams switch sides.
-    - Should a third heat be necessary, a coin flip will determine the starting position. The team that ranked higher in Time Trial will call the coin flip (i.e., heads or tails). The team that wins the coin flip chooses the starting position.
+    - Should a third heat be necessary, the team that ranked higher in Time Trial chooses the starting position again.
+    - _Note: In case both teams are tied in the Time Trial results, a random method (e.g., coin flip) is used to determine the starting positions._
 
-- As opposed to Time Trial, no reconfiguration is allowed during the race.
+- Similarly to Time Trial, the car MUST be stopped to change its configuration.
 
 
 ### Tournament types
@@ -820,6 +826,6 @@ If the racing track is changed for the Master Cup, the teams are given an extra 
 
 The competition concludes with the Awards ceremony. The ceremony may be accompanied by a workshop session.
 
-- During the workshop session, top 4 teams from each cup are obliged to briefly talk about their approach.
+- During the workshop session, top 4 teams from each cup are obliged to present their approach.
     - In case a team cannot attend the workshop, they may send a short video presentation instead.
     - The presentations are shared after the competition on the competition website.
