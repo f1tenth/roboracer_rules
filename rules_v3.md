@@ -346,8 +346,8 @@ Track contains sections that are marked as a pit lane.
 
 - When this track feature is used, deliberate stopping outside the pit lane is not allowed.
     - Stopping outside of pit lane is considered as a ... _(which type of violation?)_ <!-- TODO -->
-- Teams are allowed to add cars to the track only at a pit lane area.
-    - Teams are highly encouraged to do the car removal here as well, unless required by the current situation.
+- Teams MUST add cars to the track only at a pit lane area.
+    - Teams SHOULD remove the car from the track here as well, unless required by the current situation.
 
 
 #### Open walls
@@ -503,7 +503,7 @@ Parts of the competitions are organized in so-called sessions.
 
 - The session/slot/heat timers are fixed to the time slot and no extensions are given.
     - Missing out a time slot does not give the team an additional slot.
-    - Upon their mutual agreement, the teams are allowed to exchange the slots by informing the responsible organizers.
+    - Upon their mutual agreement, the teams are allowed to exchange the slots by informing the responsible organizers at least 10 minutes before the slot starts.
 
 - Opt-in session slots are designated on a first-come-first-serve (FCFS) basis.
     - The teams register individually for a given time slot using a method announced by the organizers during on-site registration.
