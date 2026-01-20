@@ -401,6 +401,7 @@ The track contains track splits, i.e., the track section is split into multiple 
 - Driving through the track may be performed by any of the paths. They are considered equal.
     - However, they might not be equal performance-wise, e.g., taking one of the paths might be more beneficial than the other.
 - Driving though only one of the paths is required for lap completion.
+    - It is allowed to switch between the paths in subsequent laps.
 - Competition rules have to specify:
     - Track width in the split section, in case it would differ from the general track width limit.
 
