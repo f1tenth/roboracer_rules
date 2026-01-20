@@ -166,14 +166,15 @@ These rules are organized as follows:
     - Finish line: Line (physical) on the ground that marks the end of the lap on the track. MAY be identical to Starting line.
 - Session: Block of specific competition part.
     - Slot: Time block reserved for a subset of teams. Single session usually contains multiple slots.
-    - Heat: Single instance of n-teams racing on the track. A race can be composed on multiple heats.
+    - Heat: Single instance of n-teams racing on the track. A race can be composed of multiple heats.
 - <a id="touch"></a>Touching: Moving an object by less than 5 cm.
 - <a id="crash"></a>Crashing: Moving an object by at least 5 cm. When interacting with another car, crashing means significantly changing its expected trajectory.
 - Overtake: Act of bypassing opponent car by at least half of its length.
-- Penalties: Minor punishments for not adhering to the rules.
-- Violations: Major infringements of the rules.
-- Warning: Issued for violating the rules. Three warnings MAY lead to disqualification from the competition.
-- Disqualification: Revoking the ability to attend the competition.
+- Offense: Minor or less serious infringement of the rules that MAY result into a penalty. Repeated offenses MAY be treated as a violation.
+    - Penalty: Punishment for offenses and violations.
+- Violation: Major or severe infringement of the rules that MAY result into a penalty. Violation MAY result into warnings.
+    - Warning: Issued for violating the rules. Three warnings MAY lead to disqualification from the competition.
+    - Disqualification: Revoking the ability to attend the competition.
 - <a id="whistle"></a>Whistle: Sound signal (e.g., whistle, buzzer) to raise teams' attention. Used during the race to highlight important event. May be accompanied with flags. <!-- Notifying sound -->
 - <a id="flags"></a>Flags: Visual signal to the teams. May be accompanied with whistles. When flags are used during the competition, their meaning is as follows:
     - Checkered flag: A flag is raised if the team is on the last lap. The flag is dropped and then waved when the team finishes and wins the current heat.
@@ -332,8 +333,8 @@ Track contains parts that do not lead to the finish line.
 
 Track contains sections with defined speed limits.
 
-- Driving with forbidden speed is considered as a ... _(which type of violation?)_ <!-- TODO -->
-    - During the race, the team has to stop the car and move it before the speed-restricted section.
+- Driving over the speed limit is not allowed.
+    - Upon exceeding the speed limit, the team has to stop the car and move it before the speed-restricted section.
 - The speed limit is defined in one of the following ways:
     - Area delimitation with special markings.
 - The competition rules have to specify:
@@ -345,7 +346,7 @@ Track contains sections with defined speed limits.
 Track contains sections that are marked as a pit lane.
 
 - When this track feature is used, deliberate stopping outside the pit lane is not allowed.
-    - Stopping outside of pit lane is considered as a ... _(which type of violation?)_ <!-- TODO -->
+    - Stopping outside of pit lane is considered as a minor offense.
 - Teams MUST add cars to the track only at a pit lane area.
     - Teams SHOULD remove the car from the track here as well, unless required by the current situation.
 
@@ -645,7 +646,7 @@ During a race certain mild accidents may happen. Following steps and penalties a
 
 ### Race violations
 
-Violations are major rule infringements that MAY result into warnings. Severe offenses MAY even lead to disqualification from the competition.
+During a race, following incidents are considered as violations.
 
 - A crash is not considered a warning unless judged by the referees.
     - Crashes that result in a warning include but are not limited to "malicious" crashes where the autonomous car did not attempt to slow down or steer away from the opponent.
@@ -722,8 +723,6 @@ Time Trial is a race with a goal to drive through the designated track as fast a
 
 <!-- _Competition rules have to specify: Timeslot, competition type, ..._ -->
 
-<!-- _Outline: What?, General overview, starting position, race start, race rules, penalities, etc._ -->
-
 Head-to-Head race is a race with multiple cars on the track at the same time. The idea is to drive as fast as possible while not crashing into the track and/or opponent.
 
 - During one Head-to-Head race two teams race against each other.
@@ -766,7 +765,7 @@ The tournament is organized as a Single Elimination in a series of rounds.
   - Bracket should be designed properly, e.g., it should ensure balancing in the teams racing against each other.
 
 - Each race consists of up to three heats.
-  - Team that loses the race is eliminated from the tournament.
+  - Team that loses the race (by losing two heats) is eliminated from the tournament.
 
 #### Double Elimination
 <a id="double-elimination"></a>
