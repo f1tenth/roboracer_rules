@@ -696,7 +696,10 @@ Time Trial is a race with the goal to drive through the designated track as fast
         - Lap time is measured between two subsequent finish line crossings.
         - It will be measured with a time-keeping system provided by the organizers.
     - Consecutive uninterrupted laps.
-        - A (1) uninterrupted lap is counted if and only if, between the last two finish line crossings, the car was not stopped. <!-- Consider whether to also count deliberate stopping when changing the configuration. -->
+        - A (1) uninterrupted lap is counted if and only if, between the last two finish line crossings:
+            - The car did not crash.
+            - The car was not moved manually in any way (e.g., using remote controller, moving by hand).
+            - _Note: Using the kill-switch AND NOTHING ELSE to stop the car to change its configuration is allowed._
 
 - Evaluation is performed in multiple categories, each resulting in its own result table.
 
