@@ -1,6 +1,4 @@
 # RoboRacer Rules
-_Note: This is a draft of v3 rules. Commentary will be removed in the final version._
-
 _Version: 3.2026-draft_
 
 <!-- https://discourse.devontechnologies.com/t/css-for-markdown-numbered-headings/71404/3 -->
@@ -63,39 +61,6 @@ h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 </style> -->
-
-## Outline
-The main concept is to go through the v2 rules and filter out those that are not required anymore. In general, v3 should be ready for **all** competitions, introducing harmony and transparency to the overall competition environment.
-
-The current idea is to provide a set of rules (also, general rules) and then, optionally, competition modifications (also, additional rules).
-
-Even though the aim is to make the general rules shorter, it should give multiple options to host a competition; then, inside the additional rules, you specify which parts apply.
-
-The final rules should be coherent and leave a smaller window for possible mistakes, e.g., officially having a UK competition in Pennsylvania.
-
-Note: Parts of these rules are taken over from the rules of past ~16 competitions. Credits go to the people creating those rules. (Even though they are mostly unknown.)
-
-In the rules, we should cover:
-
-- Definitions
-- Car
-- Track
-- Competition Area
-- Practice
-- Inspection
-- Qualification
-- Timed Race
-- Head-to-Head Race
-
-On the other hand, I want to avoid:
-
-- Duplicit rules (e.g., parts about the box on the car). <!--replace with references-->
-- Rules that are not used anymore (or not used at all).
-- Change will/must into may in parts where the rules might not be applied because of the competition setting (e.g., small competitions have different needs than big competitions).
-
----
-
-## General
 
 <!-- Add reference to RFC for MUST, MAY, SHOULD, ... This makes defining rules a lot easier: https://datatracker.ietf.org/doc/html/rfc2119 -->
 
