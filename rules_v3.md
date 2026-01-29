@@ -1,66 +1,7 @@
 # RoboRacer Rules
+
+## General
 _Version: 3.2026-draft_
-
-<!-- https://discourse.devontechnologies.com/t/css-for-markdown-numbered-headings/71404/3 -->
-
-<style>
-body {
-  counter-reset: h1;
-  counter-reset: p;
-}
-h1 {
-  counter-reset: h2;
-}
-h1::before {
-  counter-increment: h1;
-  /*content: counter(h1)  ". ";*/
-}
-h2 {
-  counter-reset: h3;
-}
-h2::before {
-  counter-increment: h2;
-  /*content: counter(h1) "." counter(h2) ". ";*/
-  content: counter(h2) ". ";
-}
-h3::before {
-  counter-increment: h3;
-  /*content: counter(h1) "." counter(h2) "." counter(h3) ". ";*/
-  content: counter(h2) "." counter(h3) ". ";
-}
-h3 {
-  counter-reset: h4;
-}
-h4::before {
-  counter-increment: h4;
-  content: counter(h4, lower-alpha) ". ";
-}
-p::before {
- /* counter-increment: p;
-  content: "§ " counter(p);
-  margin-right: 1rem;
-  font-weight: bold;*/
-}
-hr {
-  counter-reset: p;
-}
-</style>
-<!-- <style>
-.post ol {
-  list-style-type: lower-alpha;
-}
-.post ol ol,
-.post ul ol {
-  list-style-type: lower-roman;
-}
-.post ol, .post ul, .post p {
-  margin-bottom: 0rem;
-}
-h2, h3, h4, h5, h6 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-</style> -->
 
 <!-- Add reference to RFC for MUST, MAY, SHOULD, ... This makes defining rules a lot easier: https://datatracker.ietf.org/doc/html/rfc2119 -->
 
