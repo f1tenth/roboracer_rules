@@ -272,7 +272,6 @@ Track borders are not closed, i.e., there are horizontal gaps in them.
     - _In other words, the open wall gap is always shorter than the track width._
 
 
-
 #### Intersections
 
 _Note: This won't be used for ICRA 2026 race._
@@ -318,8 +317,10 @@ The track contains track splits, i.e., the track section is split into multiple 
 The track contains a sloped section, e.g., a bridge.
 
 - In this section, the track is generally not flat.
+- <span style="color: red">This section MUST be delimited by walls to prevent the cars from falling off the slope.</span>
 - Competition rules MUST specify:
     - Maximum elevation (%).
+    - <span style="color: red">Type of the delimiters if differ from the track delimiters.</span>
 
 _Note: When using this track feature, it can't prevent teams using single plane lidar from completing a lap._
 
@@ -705,13 +706,16 @@ All teams are racing in the same Cup using Double Elimination, but the finals (w
 
 #### Double Cup (Classic Cup, Master Cup)
 
-During the seeding, the participants are split into two groups, Cups. Note that the rules may differ between the cups. In that case, the competition rules specify how.
+<span style="color: red"><s>During</s>Before</span> the seeding, the participants are split into two groups, Cups. Note that the rules may differ between the cups. In that case, the competition rules specify how.
 
-Admission to the Master Cup (with respect to the seeding) is done as follows:
+- <span style="color: red">Each team competes in only one of the Cups.</span>
+- <span style="color: red">Brackets are seeded in each Cup separately.</span>
+
+Admission to the Master Cup (with respect to the <span style="color: red"><s>seeding</s>results of Time Trial</span>) is done as follows:
 
 - Master Cup may contain up to half of the team roster.
 - The first 4 teams automatically proceed.
-- Up to the first half, all teams have an opportunity to either join or not.
+- Up to the first half <span style="color: red">of the Time Trial leaderboard</span>, all teams have an opportunity to either join or not.
 - The organizers MAY allow to fill the rest of the Master Cup by teams that placed top 3 in the last 3 years (1100 days).
 
 If the racing track is changed for the Master Cup, the teams are given an extra practice session to test their car and algorithms on the new track.
