@@ -714,8 +714,8 @@ All teams are racing in the same Cup using Double Elimination, but the finals (w
 Admission to the Master Cup (with respect to the <span style="color: red"><s>seeding</s>results of Time Trial</span>) is done as follows:
 
 - Master Cup may contain up to half of the team roster.
-- The first 4 teams automatically proceed.
-- Up to the first half <span style="color: red">of the Time Trial leaderboard</span>, all teams have an opportunity to either join or not.
+- The first 4 teams automatically proceed <span style="color: red">and have to compete in the Master Cup</span>.
+- <span style="color: red"><s>Up to</s>The other teams, placing in</span> the <span style="color: red"><s>first</s>top</span> half <span style="color: red">of the Time Trial leaderboard</span>, <span style="color: red"><s>all teams</s></span> have an opportunity to either join <span style="color: red">Master Cup</span> or not.
 - The organizers MAY allow to fill the rest of the Master Cup by teams that placed top 3 in the last 3 years (1100 days).
 
 If the racing track is changed for the Master Cup, the teams are given an extra practice session to test their car and algorithms on the new track.
