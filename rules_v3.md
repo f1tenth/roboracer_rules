@@ -359,7 +359,7 @@ The competition is composed of:
 - Registrations received after the deadline MAY not be accepted.
 - Registration is confirmed by the competition organizers after completing all required steps. These are, but not limited to:
     - Filling out the registration form.
-    - Submitting a video of your car driving autonomously.
+    - Submitting a video of your car driving autonomously <span style="color: red">(~1 minute)</span>.
     - Submitting a hardware list.
         - The hardware list will be made publicly available for other teams after the competition.
 - Not submitting in time MAY void the registration.
