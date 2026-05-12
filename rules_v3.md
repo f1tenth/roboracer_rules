@@ -126,7 +126,9 @@ Each vehicle will be inspected during the competition to determine whether it me
     - Other means of propulsion (such as propellers) are not allowed.
 8. Battery
     - Up to **4S LiPo** for powering the motor.
+      - <span style="color: orange">Maximum nominal voltage of the battery: 14.8V (4 × 3.7V)</span>
       - When using a battery with another cell chemistry, its performance MUST NOT exceed this.
+      - <span style="color: orange">The batteries MUST NOT be connected in series to effectively increase the nominal voltage beyond the limit.</span>
     - Additional batteries for powering other components are not limited.
 9. Electronic Speed Controllers
     - No limits.
