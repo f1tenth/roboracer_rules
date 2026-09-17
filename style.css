@@ -1,17 +1,20 @@
 /* https://discourse.devontechnologies.com/t/css-for-markdown-numbered-headings/71404/3 */
+/* Subsection counters are restarted with counter-set, not counter-reset: with body
+   already resetting every counter, Chrome keeps counting across sections when a
+   heading uses counter-reset (13.6, 13.7 ... instead of 13.1, 13.2). */
 /* The site automatically shifts this by "one", e.g., h1 -> h1. */
 body {
   counter-reset: h1 h2 h3 h4 p;
 }
 h1 {
-  counter-reset: h2;
+  counter-set: h2 0;
 }
 h1::before {
   counter-increment: h1;
   /*content: counter(h1)  ". ";*/
 }
 h2 {
-  counter-reset: h3;
+  counter-set: h3 0;
 }
 h2::before {
   counter-increment: h2;
@@ -24,7 +27,7 @@ h3::before {
   content: counter(h2) "." counter(h3) ". ";
 }
 h3 {
-  counter-reset: h4;
+  counter-set: h4 0;
 }
 h4::before {
   counter-increment: h4;
